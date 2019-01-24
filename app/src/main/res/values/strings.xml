@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">NET.NL-568225</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Inloggen</string>
+    <string name="logoff">Uitloggen</string>
+    <string name="username">Gebruikersnaam</string>
+    <string name="password">Wachtwoord</string>
+    <string name="register">Registreren</string>
+    <string name="categories">Categorieën</string>
+    <string name="account">Account</string>
+    <string name="unknown_user">Gast</string>
+    <string name="favorites">Favorieten</string>
+    <string name="fetch_error">Er is iets fout gegaan tijdens het laden.</string>
+
+    <string name="title">Titel</string>
+</resources>

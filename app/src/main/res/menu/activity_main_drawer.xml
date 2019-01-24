@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/baseline_home_24"
+            android:title="Home" />
+        <item
+            android:visible="false"
+            android:id="@+id/nav_favorites"
+            android:icon="@drawable/baseline_star_24"
+            android:title="@string/favorites"/>
+    </group>
+
+    <item android:title="@string/categories">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_algemeen"
+                    android:icon="@drawable/baseline_description_24"
+                    android:title="Algemeen" />
+                <item
+                    android:id="@+id/menu_internet"
+                    android:icon="@drawable/baseline_alternate_email_24"
+                    android:title="Internet" />
+                <item
+                    android:id="@+id/menu_sport"
+                    android:icon="@drawable/futbol_regular"
+                    android:title="Sport" />
+                <item
+                    android:id="@+id/menu_opmerkelijk"
+                    android:icon="@drawable/baseline_highlight_24"
+                    android:title="Opmerkelijk" />
+                <item
+                    android:id="@+id/menu_games"
+                    android:icon="@drawable/baseline_videogame_asset_24"
+                    android:title="Games" />
+                <item
+                    android:id="@+id/menu_wetenschap"
+                    android:icon="@drawable/microscope"
+                    android:title="Wetenschap" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/account">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_login"
+                    android:icon="@drawable/sign_in"
+                    android:title="@string/login" />
+                <item
+                    android:id="@+id/menu_register"
+                    android:icon="@drawable/baseline_person_add_24"
+                    android:title="@string/register" />
+                <item
+                    android:visible="false"
+                    android:id="@+id/menu_logoff"
+                    android:icon="@drawable/sign_in"
+                    android:title="@string/logoff"/>
+            </group>
+        </menu>
+    </item>
+
+</menu>
