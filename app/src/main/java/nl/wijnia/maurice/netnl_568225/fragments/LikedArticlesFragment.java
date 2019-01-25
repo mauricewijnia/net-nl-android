@@ -51,7 +51,7 @@ public class LikedArticlesFragment extends Fragment implements ArticlesFragment.
 
     @Override
     public void getMore() {
-        // API Does not allow incremental loading
+        // API Does not allow incremental loading for liked articles
     }
 
     @Override

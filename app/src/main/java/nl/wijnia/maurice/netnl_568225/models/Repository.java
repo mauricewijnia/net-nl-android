@@ -2,6 +2,7 @@ package nl.wijnia.maurice.netnl_568225.models;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -16,6 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import nl.wijnia.maurice.netnl_568225.Renderers;
+import nl.wijnia.maurice.netnl_568225.activities.ArticleActivity;
 import nl.wijnia.maurice.netnl_568225.fragments.LoginFragment;
 import nl.wijnia.maurice.netnl_568225.fragments.RegisterFragment;
 
@@ -150,6 +152,64 @@ public class Repository {
                 return params;
             }
         };
+        queue.add(stringRequest);
+    }
+
+    public void likeArticle(final ArticleActivity context, final Article article) {
+        String url = base_url + String.format("api/Articles/%d/like", article.id);
+        StringRequest stringRequest = new StringRequest(Request.Method.PUT, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.d("Success", response);
+                context.onLike();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("Registration", ""+error.networkResponse.statusCode);
+                context.onFail();
+            }
+        }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String>  params = new HashMap<String, String>();
+                User user = User.currentUser();
+                if (user != null) {
+                    params.put("x-authtoken", user.authToken);
+                }
+                return params;
+            }
+        };
+
+        queue.add(stringRequest);
+    }
+
+    public void unlikeArticle(final ArticleActivity context, final Article article) {
+        String url = base_url + String.format("api/Articles/%d/like", article.id);
+        StringRequest stringRequest = new StringRequest(Request.Method.DELETE, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.d("Success", response);
+                context.onUnlike();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("Registration", ""+error.networkResponse.statusCode);
+                context.onFail();
+            }
+        }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String>  params = new HashMap<String, String>();
+                User user = User.currentUser();
+                if (user != null) {
+                    params.put("x-authtoken", user.authToken);
+                }
+                return params;
+            }
+        };
+
         queue.add(stringRequest);
     }
 

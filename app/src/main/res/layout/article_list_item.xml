@@ -24,12 +24,32 @@
         android:scaleType="centerCrop"
         />
 
-    <TextView
-        android:id="@+id/txtCategories"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textFontWeight="200"
-        android:text="@string/categories"
-        android:layout_margin="10dp"/>
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_alignParentLeft="true"
+            android:id="@+id/txtCategories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textFontWeight="200"
+            android:text="@string/categories"
+            android:layout_margin="10dp"/>
+
+        <ImageView
+            android:id="@+id/imgLiked"
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/baseline_star_24"/>
+    </RelativeLayout>
+
+
+
 
 </LinearLayout>

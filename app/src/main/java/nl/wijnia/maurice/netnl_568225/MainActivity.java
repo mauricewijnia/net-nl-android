@@ -3,6 +3,7 @@ package nl.wijnia.maurice.netnl_568225;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     protected NavigationView navigationView;
+    Fragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +76,11 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_refresh) {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.detach(fragment);
+            ft.attach(fragment);
+            ft.commit();
             return true;
         }
 
@@ -85,7 +91,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        Fragment fragment = null;
+        fragment = null;
         int id = item.getItemId();
         if (id == R.id.nav_home) {
             fragment = new HomeFragment();
@@ -124,8 +130,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void navigateHome() {
-        HomeFragment homeFragment = new HomeFragment();
-        getSupportFragmentManager().beginTransaction().replace(R.id.main_fragment_container, homeFragment).commit();
+        fragment = new HomeFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.main_fragment_container, fragment).commit();
         navigationView.getMenu().getItem(0).setChecked(true);
     }
 

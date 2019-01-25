@@ -59,6 +59,12 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
                 categories += ",";
             }
         }
+        View liked = articleViewHolder.view.findViewById(R.id.imgLiked);
+        if (article.isLiked) {
+            liked.setVisibility(View.VISIBLE);
+        } else {
+            liked.setVisibility(View.GONE);
+        }
         txtTitle.setText(article.title);
         txtCategories.setText(categories);
         //txtSummary.setText(article.summary);

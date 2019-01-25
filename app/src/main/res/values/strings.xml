@@ -19,6 +19,10 @@
     <string name="unknown_user">Gast</string>
     <string name="favorites">Favorieten</string>
     <string name="fetch_error">Er is iets fout gegaan tijdens het laden.</string>
+    <string name="read_more">Verder Lezen</string>
+    <string name="like">Like</string>
+    <string name="unlike">Unlike</string>
+    <string name="refresh">Verversen</string>
 
     <string name="title">Titel</string>
 </resources>

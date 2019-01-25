@@ -30,4 +30,30 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"/>
 
+    <Button style="@style/Widget.AppCompat.Button.Colored"
+        android:id="@+id/btn_like"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/like"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <Button style="@style/Widget.AppCompat.Button.Colored"
+        android:visibility="gone"
+        android:id="@+id/btn_unlike"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/unlike"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <Button style="@style/Widget.AppCompat.Button.Colored"
+        android:id="@+id/read_more"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/read_more"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+
 </LinearLayout>
